@@ -12,6 +12,9 @@ public class BlastLizard extends Monster {
     private int hitPoints;
     private boolean flight;
     private boolean tunneling;
+    private int atkCrest;
+    private int defCrest;
+
 
     public BlastLizard(){
         this.level = 2;
@@ -21,6 +24,8 @@ public class BlastLizard extends Monster {
         this.flight = false;
         this.tunneling = false;
         this.tribe = Tribe.BEAST;
+        this.atkCrest = 0;
+        this.defCrest = 0;
     }
     @Override
     public void attack(Monster monster) {
@@ -52,4 +57,7 @@ public class BlastLizard extends Monster {
     public int getHitPoints() {
         return hitPoints;
     }
+
+    public Tribe getTribe(){ return tribe;}
+
 }
