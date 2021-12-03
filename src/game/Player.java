@@ -57,7 +57,7 @@ public class Player {
         if (defCrest < 10) {
             this.defCrest += number;
         } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Defend crests.");
+            throw new NumberOfCrestsOutOfBounds("Too many Defense crests.");
         }
     }
 
@@ -97,7 +97,7 @@ public class Player {
         if (defCrest - number > 0) {
             this.defCrest -= number;
         } else {
-            throw new NumberOfCrestsOutOfBounds("Not enough Defend crests.");
+            throw new NumberOfCrestsOutOfBounds("Not enough Defense crests.");
         }
     }
 
