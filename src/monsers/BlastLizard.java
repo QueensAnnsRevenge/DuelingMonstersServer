@@ -1,41 +1,36 @@
 package monsers;
 
-import core.Tribe;
+import Exceptions.MonsterDestroyed;
 import core.Monster;
+import core.Tribe;
 
-public class BlastLizard implements Monster {
+public class BlastLizard extends Monster {
 
-    private int level;
-    private Tribe tribe;
-    private int attackPoints;
-    private int defendPoints;
-    private int hitPoints;
-    private boolean flight;
-    private boolean tunneling;
-    private int atkCrest;
-    private int defCrest;
+    private final String name = "Blast Lizard";
+    private int magCrest;
+    private final String lore = "This monster destroys any Level 1 monster or item." +
+            "To destroy a monster or item of Level 2 or higher," +
+            "add a Magic Crest for every level above Level 1.";
 
 
     public BlastLizard(){
-        this.level = 2;
-        this.attackPoints = 10;
-        this.defendPoints = 10;
-        this.hitPoints = 10;
-        this.flight = false;
-        this.tunneling = false;
-        this.tribe = Tribe.BEAST;
-        this.atkCrest = 0;
-        this.defCrest = 0;
+        super(2,Tribe.BEAST,10,10,20,false,false);
+        this.magCrest = 0;
     }
 
 
-    public void damage(int damage) {
-        hitPoints -= damage;
+    public void damage(int damage) throws MonsterDestroyed {
+        if(hitPoints - damage <= 0) {
+            throw new MonsterDestroyed(name);
+        }
     }
 
-
-    public void heal(int point) {
-        hitPoints += point;
+    public void heal(int points) {
+        if(currentHitPoints + points >= hitPoints) {
+            currentHitPoints = hitPoints;
+        } else {
+            currentHitPoints += points;
+        }
     }
 
     public int getLevel() {
