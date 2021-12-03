@@ -1,8 +1,8 @@
 package game;
 
-import Exceptions.MonsterLimit;
-import Exceptions.NumberOfCreastsOutOfBounds;
-import Exceptions.YouAreDead;
+import exceptions.MonsterLimit;
+import exceptions.NumberOfCrestsOutOfBounds;
+import exceptions.YouAreDead;
 import core.Monster;
 
 import java.util.List;
@@ -17,10 +17,10 @@ public class Player {
     private int magCrest;
     private int trpCrest;
     private List<Monster> monsters;
-    private int numberOfSummondMonsters;
+    private int numberOfSummonedMonsters;
 
     public Player(){
-        this.numberOfSummondMonsters = 0;
+        this.numberOfSummonedMonsters = 0;
         this.lifePoints = 3;
         this.atkCrest = 0;
         this.defCrest = 0;
@@ -45,92 +45,92 @@ public class Player {
         }
     }
 
-    public void addAtkCrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void addAtkCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (atkCrest < 10) {
             atkCrest += number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Too many Attack creasts");
+            throw new NumberOfCrestsOutOfBounds("Too many Attack crests.");
         }
     }
 
-    public void addDefCreast(int number) throws NumberOfCreastsOutOfBounds{
+    public void addDefCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (defCrest < 10) {
             this.defCrest += number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Too many Defend creasts");
+            throw new NumberOfCrestsOutOfBounds("Too many Defend crests.");
         }
     }
 
-    public void addMovCrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void addMovCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (movCrest < 10) {
             movCrest += number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Too many Moovment creasts");
+            throw new NumberOfCrestsOutOfBounds("Too many Movement crests.");
         }
     }
 
-    public void addMagVrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void addMagCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (magCrest < 10) {
             magCrest += number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Too many Magic creasts");
+            throw new NumberOfCrestsOutOfBounds("Too many Magic crests.");
         }
     }
 
-    public void addTrpCreasts(int number) throws NumberOfCreastsOutOfBounds{
+    public void addTrpCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (trpCrest < 10){
             trpCrest += number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Too many Trap creasts");
+            throw new NumberOfCrestsOutOfBounds("Too many Trap crests.");
         }
     }
 
-    public void decAtkCrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void decAtkCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (atkCrest - number > 0) {
             atkCrest -= number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Not enough Attack creasts");
+            throw new NumberOfCrestsOutOfBounds("Not enough Attack crests.");
         }
     }
 
-    public void decDefCreast(int number) throws NumberOfCreastsOutOfBounds{
+    public void decDefCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (defCrest - number > 0) {
             this.defCrest -= number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Not enough Defend creasts");
+            throw new NumberOfCrestsOutOfBounds("Not enough Defend crests.");
         }
     }
 
-    public void decMovCrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void decMovCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (movCrest - number > 0) {
             movCrest -= number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Not enough Moovment creasts");
+            throw new NumberOfCrestsOutOfBounds("Not enough Movement crests.");
         }
     }
 
-    public void decMagVrest(int number) throws NumberOfCreastsOutOfBounds{
+    public void decMagCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (magCrest - number >= 0) {
             magCrest -= number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Not enough Magic creasts");
+            throw new NumberOfCrestsOutOfBounds("Not enough Magic crests.");
         }
     }
 
-    public void decTrpCreasts(int number) throws NumberOfCreastsOutOfBounds{
+    public void decTrpCrests(int number) throws NumberOfCrestsOutOfBounds {
         if (trpCrest - number > 0){
             trpCrest -= number;
         } else {
-            throw new NumberOfCreastsOutOfBounds("Not enough Trap creasts");
+            throw new NumberOfCrestsOutOfBounds("Not enough Trap crests.");
         }
     }
 
     public void summonMonster(Space spaceForSummoning, Monster monster) throws MonsterLimit{
-        if (numberOfSummondMonsters < 10){
-            numberOfSummondMonsters++;
+        if (numberOfSummonedMonsters < 10){
+            numberOfSummonedMonsters++;
             spaceForSummoning.setMonster(monster);
         } else {
-            throw new MonsterLimit("Allredy have 10 monsters");
+            throw new MonsterLimit("You can't have more than 10 monsters");
         }
     }
 

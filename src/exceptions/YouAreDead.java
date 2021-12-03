@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class YouAreDead extends Exception{
     public YouAreDead(String message){

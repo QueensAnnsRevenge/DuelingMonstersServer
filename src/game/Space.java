@@ -6,14 +6,14 @@ public class Space {
 
     private Monster monster;
     //Shows if there is a monster on the space
-    private boolean ocupaed = false;
+    private boolean occupied = false;
     //Shows if this space is available for the monster to move there
     private boolean availableForPlay = false;
     private Player player;
 
     public void setMonster(Monster monster) {
         this.monster = monster;
-        ocupaed = true;
+        occupied = true;
     }
 
     public Monster getMonster(){
@@ -21,11 +21,11 @@ public class Space {
     }
 
 
-    public boolean isOcupaed(){ return ocupaed; }
+    public boolean isOcupaed(){ return occupied; }
 
     public void setPlayer(Player p){
         this.player = p;
-        ocupaed = true;
+        occupied = true;
     }
 
     public void setAvailableForPlay(){

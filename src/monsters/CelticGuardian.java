@@ -1,6 +1,6 @@
-package monsers;
+package monsters;
 
-import Exceptions.MonsterDestroyed;
+import exceptions.MonsterDestroyed;
 import core.Monster;
 import core.Tribe;
 
@@ -22,13 +22,11 @@ public class CelticGuardian extends Monster {
         this.defCrest = 0;
     }
 
-
     public void damage(int points) throws MonsterDestroyed {
         if(hitPoints - points <= 0) {
             throw new MonsterDestroyed(name);
         }
     }
-
 
     public void heal(int points) {
         if(currentHitPoints + points >= hitPoints) {

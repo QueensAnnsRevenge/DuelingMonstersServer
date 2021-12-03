@@ -1,6 +1,6 @@
 package core;
 
-import Exceptions.MonsterDestroyed;
+import exceptions.MonsterDestroyed;
 
 public abstract class Monster {
     protected int level;
