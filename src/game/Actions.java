@@ -17,8 +17,9 @@ public class Actions {
     }
 
     public void attackPlayer(Player defender, Monster attacker) throws YouAreDead {
-        if(defender.getLifePoints() - 1 == 0){
-            throw new YouAreDead("Yout died");
+        defender.decLifePoints();
+        if(defender.getLifePoints() == 0){
+            throw new YouAreDead("You died");
         } else {
             defender.decLifePoints();
         }
