@@ -134,4 +134,7 @@ public class Player {
         }
     }
 
+    public int getLifePoints(){
+        return lifePoints;
+    }
 }
