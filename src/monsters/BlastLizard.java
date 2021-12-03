@@ -1,6 +1,6 @@
-package monsers;
+package monsters;
 
-import Exceptions.MonsterDestroyed;
+import exceptions.MonsterDestroyed;
 import core.Monster;
 import core.Tribe;
 
