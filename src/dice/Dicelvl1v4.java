@@ -1,9 +1,9 @@
 package dice;
 
-import core.Dice;
 import core.Side;
+import core.Dice;
 
-public class Dicelvl1v4 extends Dice {
+public class Dicelvl1v4 implements Dice {
 
     private Side[] dice = {Side.SUM, Side.SUM, Side.SUM, Side.DEF, Side.MOV, Side.SUM};
 

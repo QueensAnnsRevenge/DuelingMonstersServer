@@ -1,14 +1,14 @@
 package monsers;
 
-import core.Monster;
 import core.Tribe;
+import core.Monster;
 
-public class BlastLizard extends Monster {
+public class BlastLizard implements Monster {
 
     private int level;
     private Tribe tribe;
     private int attackPoints;
-    private int degendPoints;
+    private int defendPoints;
     private int hitPoints;
     private boolean flight;
     private boolean tunneling;
@@ -19,7 +19,7 @@ public class BlastLizard extends Monster {
     public BlastLizard(){
         this.level = 2;
         this.attackPoints = 10;
-        this.degendPoints = 10;
+        this.defendPoints = 10;
         this.hitPoints = 10;
         this.flight = false;
         this.tunneling = false;
@@ -27,17 +27,13 @@ public class BlastLizard extends Monster {
         this.atkCrest = 0;
         this.defCrest = 0;
     }
-    @Override
-    public void attack(Monster monster) {
-        monster.damage(attackPoints);
-    }
 
-    @Override
+
     public void damage(int damage) {
         hitPoints -= damage;
     }
 
-    @Override
+
     public void heal(int point) {
         hitPoints += point;
     }
@@ -50,8 +46,8 @@ public class BlastLizard extends Monster {
         return attackPoints;
     }
 
-    public int getDegendPoints() {
-        return degendPoints;
+    public int getDefendPoints() {
+        return defendPoints;
     }
 
     public int getHitPoints() {

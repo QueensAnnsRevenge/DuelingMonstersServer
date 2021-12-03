@@ -1,6 +1,5 @@
 package core;
 
-public abstract class Dice {
-    public abstract Side throwDice();
-
+public interface Dice {
+    public Side throwDice();
 }

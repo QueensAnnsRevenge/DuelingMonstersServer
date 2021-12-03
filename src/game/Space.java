@@ -5,7 +5,9 @@ import core.Monster;
 public class Space {
 
     private Monster monster;
+    //Shows if there is a monster on the space
     private boolean ocupaed = false;
+    //Shows if this space is available for the monster to move there
     private boolean availableForPlay = false;
     private Player player;
 
