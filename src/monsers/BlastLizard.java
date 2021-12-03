@@ -1,20 +1,12 @@
 package monsers;
 
 import Exceptions.MonsterDestroyed;
-import core.Tribe;
 import core.Monster;
+import core.Tribe;
 
-public class BlastLizard implements Monster {
+public class BlastLizard extends Monster {
 
     private final String name = "Blast Lizard";
-    private int level;
-    private Tribe tribe;
-    private int attackPoints;
-    private int defendPoints;
-    private final int hitPoints = 10;
-    private int currentHitPoints;
-    private boolean flight;
-    private boolean tunneling;
     private int magCrest;
     private final String lore = "This monster destroys any Level 1 monster or item." +
             "To destroy a monster or item of Level 2 or higher," +
@@ -22,13 +14,7 @@ public class BlastLizard implements Monster {
 
 
     public BlastLizard(){
-        this.level = 2;
-        this.attackPoints = 10;
-        this.defendPoints = 10;
-        this.currentHitPoints = hitPoints;
-        this.flight = false;
-        this.tunneling = false;
-        this.tribe = Tribe.BEAST;
+        super(2,Tribe.BEAST,10,10,20,false,false);
         this.magCrest = 0;
     }
 

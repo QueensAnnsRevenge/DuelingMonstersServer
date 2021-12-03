@@ -4,17 +4,9 @@ import Exceptions.MonsterDestroyed;
 import core.Monster;
 import core.Tribe;
 
-public class CelticGuardian implements Monster {
+public class CelticGuardian extends Monster {
 
     private final String name = "Celtic Guardian";
-    private int level;
-    private Tribe tribe;
-    private int attackPoints;
-    private int defendPoints;
-    private final int hitPoints = 10;
-    private int currentHitPoints;
-    private boolean flight;
-    private boolean tunneling;
     private int atkCrest;
     private int defCrest;
     private final String lore = "This monster adds an additional 10 Attack Power points" +
@@ -25,25 +17,19 @@ public class CelticGuardian implements Monster {
             "(you can only use this effect once per turn).";
 
     public CelticGuardian() {
-        this.level = 1;
-        this.tribe = Tribe.WARRIOR;
-        this.attackPoints = 20;
-        this.defendPoints = 20;
-        this.currentHitPoints = hitPoints;
-        this.flight = false;
-        this.tunneling = false;
+        super(1,Tribe.WARRIOR,20,20,10,false,false);
         this.atkCrest = 0;
         this.defCrest = 0;
     }
 
-    @Override
+
     public void damage(int points) throws MonsterDestroyed {
         if(hitPoints - points <= 0) {
             throw new MonsterDestroyed(name);
         }
     }
 
-    @Override
+
     public void heal(int points) {
         if(currentHitPoints + points >= hitPoints) {
             currentHitPoints = hitPoints;
@@ -52,12 +38,10 @@ public class CelticGuardian implements Monster {
         }
     }
 
-    @Override
     public int getAttackPoints() {
         return attackPoints;
     }
 
-    @Override
     public int getDefendPoints() {
         return defendPoints;
     }
