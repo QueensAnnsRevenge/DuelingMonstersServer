@@ -1,5 +1,5 @@
 package core;
 
 public enum Tribe {
-    BEAST, WARRIOR, DARK, INVINCIBLE, DRAGON
+    BEAST, DARK, DRAGON, ITEM, WARRIOR, ZOMBIE
 }
