@@ -1,9 +1,10 @@
 package MainGame;
 
 import core.Side;
+import exceptions.SpaceOccupied;
 import game.Actions;
 import game.BattleBoard;
-import game.Player;
+import game.Space;
 
 public class GameInstance extends Thread{
 
@@ -33,24 +34,33 @@ public class GameInstance extends Thread{
             // Prolazim kroz bacene strane i povecavam brojace crestova
             // prvom igracu. Nisam izbacio ogranicenje za broj crestova
             // tako da compiler trazi da stavim sve to u try/catch blok
-            for(int i=0; i<rolledSides.length; i++) {
-                if(rolledSides[i] == Side.ATK) {
+            for (Side rolledSide : rolledSides) {
+                if (rolledSide == Side.ATK) {
                     battleBoard.getPlayerA().getPlayer().addAtkCrests(1);
-                } else if(rolledSides[i] == Side.DEF) {
+                } else if (rolledSide == Side.DEF) {
                     battleBoard.getPlayerA().getPlayer().addDefCrests(1);
-                } else if(rolledSides[i] == Side.MAG) {
+                } else if (rolledSide == Side.MAG) {
                     battleBoard.getPlayerA().getPlayer().addMagCrests(1);
-                } else if(rolledSides[i] == Side.MOV) {
+                } else if (rolledSide == Side.MOV) {
                     battleBoard.getPlayerA().getPlayer().addMovCrests(1);
-                } else if(rolledSides[i] == Side.TRA) {
+                } else if (rolledSide == Side.TRA) {
                     battleBoard.getPlayerA().getPlayer().addTrpCrests(1);
                 } else {
                     numberOfSummonCrests++;
                 }
             }
 
+            // Ako ima barem 2 summon cresta, onda moze da summonuje
+            // sad klijent treba da odabere kog cudovista poziva,
+            // opet, nema komunikacije izmedju klijenta i servera,
+            // tako da ostaje prazno za sad.
             if(numberOfSummonCrests >= 2) {
+                try {
+                    actions.summon(null, new Space());
 
+                } catch (SpaceOccupied spaceOccupied) {
+                    spaceOccupied.printStackTrace();
+                }
             }
         }
 

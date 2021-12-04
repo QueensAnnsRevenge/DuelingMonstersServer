@@ -45,44 +45,24 @@ public class Player {
         }
     }
 
-    public void addAtkCrests(int number) throws NumberOfCrestsOutOfBounds {
-        if (atkCrest < 10) {
-            atkCrest += number;
-        } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Attack crests.");
-        }
+    public void addAtkCrests(int number) {
+        atkCrest += number;
     }
 
-    public void addDefCrests(int number) throws NumberOfCrestsOutOfBounds {
-        if (defCrest < 10) {
-            this.defCrest += number;
-        } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Defense crests.");
-        }
+    public void addDefCrests(int number) {
+        defCrest += number;
     }
 
-    public void addMovCrests(int number) throws NumberOfCrestsOutOfBounds {
-        if (movCrest < 10) {
-            movCrest += number;
-        } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Movement crests.");
-        }
+    public void addMovCrests(int number) {
+        movCrest += number;
     }
 
-    public void addMagCrests(int number) throws NumberOfCrestsOutOfBounds {
-        if (magCrest < 10) {
-            magCrest += number;
-        } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Magic crests.");
-        }
+    public void addMagCrests(int number) {
+        magCrest += number;
     }
 
-    public void addTrpCrests(int number) throws NumberOfCrestsOutOfBounds {
-        if (trpCrest < 10){
-            trpCrest += number;
-        } else {
-            throw new NumberOfCrestsOutOfBounds("Too many Trap crests.");
-        }
+    public void addTrpCrests(int number) {
+        trpCrest += number;
     }
 
     public void decAtkCrests(int number) throws NumberOfCrestsOutOfBounds {
