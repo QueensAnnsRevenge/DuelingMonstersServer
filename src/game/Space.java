@@ -18,7 +18,13 @@ public class Space {
         this.monster = monster;
         occupied = true;
     }
+    public Monster getMonster(){
+        return monster;
+    }
 
+
+    public boolean isOccupied(){ return occupied; }
+ 
 
     public void setPlayer(Player p){
         this.player = p;

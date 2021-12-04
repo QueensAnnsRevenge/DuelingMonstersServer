@@ -35,6 +35,11 @@ public class BlastLizard extends Monster {
         }
     }
 
+    @Override
+    public void specialEffect() {
+
+    }
+
     public int getLevel() {
         return level;
     }
