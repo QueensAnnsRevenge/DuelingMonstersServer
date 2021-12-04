@@ -22,6 +22,8 @@ public class BlastLizard extends Monster {
     public void damage(int damage) throws MonsterDestroyed {
         if(hitPoints - damage <= 0) {
             throw new MonsterDestroyed(name);
+        } else {
+            currentHitPoints -= damage;
         }
     }
 

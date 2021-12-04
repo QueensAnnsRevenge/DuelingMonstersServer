@@ -22,9 +22,11 @@ public class CelticGuardian extends Monster {
         this.defCrest = 0;
     }
 
-    public void damage(int points) throws MonsterDestroyed {
-        if(hitPoints - points <= 0) {
+    public void damage(int damage) throws MonsterDestroyed {
+        if(hitPoints - damage <= 0) {
             throw new MonsterDestroyed(name);
+        } else {
+            currentHitPoints -= damage;
         }
     }
 

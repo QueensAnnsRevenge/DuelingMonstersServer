@@ -7,6 +7,7 @@ import core.Side;
 import dice.*;
 import exceptions.CannotAttack;
 import exceptions.MonsterDestroyed;
+import exceptions.SpaceOccupied;
 import exceptions.YouAreDead;
 
 import java.util.Random;
@@ -17,7 +18,7 @@ public class Actions {
         if(attacker.getAttackPoints() < defender.getDefendPoints()){
             throw new CannotAttack("Cannot attack");
         } else {
-            defender.damage(attacker.getAttackPoints());
+            defender.damage(attacker.getAttackPoints() - defender.getDefendPoints());
         }
     }
 
@@ -66,5 +67,12 @@ public class Actions {
                 break;
         }
         return returnSides;
+
+    public void summon(Monster monster, Space place) throws SpaceOccupied {
+        if(place.getAvailableForPlay()){
+            place.setMonster(monster);
+        } else {
+            throw new SpaceOccupied("Ovo mesto je nedostupno");
+        }
     }
 }
