@@ -39,15 +39,9 @@ public class Space {
 
     public Player getPlayer(){ return player; }
 
-    public Monster getMonster(){
-        return monster;
-    }
-
     public Item getItem(){ return item; }
 
     public boolean getHasItem(){ return hasItem; }
-
-    public boolean isOcupaed(){ return occupied; }
 
     public boolean getAvailableForPlay(){
          return availableForPlay;

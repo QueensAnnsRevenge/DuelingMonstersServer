@@ -10,8 +10,6 @@ import exceptions.MonsterDestroyed;
 import exceptions.SpaceOccupied;
 import exceptions.YouAreDead;
 
-import java.util.Random;
-
 public class Actions {
 
     public void attack(Monster attacker, Monster defender) throws CannotAttack, MonsterDestroyed {
@@ -67,6 +65,7 @@ public class Actions {
                 break;
         }
         return returnSides;
+    }
 
     public void summon(Monster monster, Space place) throws SpaceOccupied {
         if(place.getAvailableForPlay()){

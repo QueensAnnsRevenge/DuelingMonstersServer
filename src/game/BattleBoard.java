@@ -38,5 +38,7 @@ public class BattleBoard {
 
     public Space getPlayerB(){ return playerB; }
 
-    public Space[][] battleField(){return battleField; }
+    public ArrayList<Monster> getMonsters() {
+        return monsters;
+    }
 }
