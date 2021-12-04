@@ -21,7 +21,7 @@ public class Space {
     }
 
 
-    public boolean isOcupaed(){ return occupied; }
+    public boolean isOccupied(){ return occupied; }
 
     public void setPlayer(Player p){
         this.player = p;

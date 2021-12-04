@@ -7,7 +7,7 @@ public class PathBuilding {
 //This is hopefully a temporary solution
     public static void shape1Pos1(int x, int y, BattleBoard board){
         //if(board.getBattlefeald())
-        board.getBattlefeald()[x][y-1].setAvailableForPlay();
+        board.getBattlefield()[x][y-1].setAvailableForPlay();
 
     }
 

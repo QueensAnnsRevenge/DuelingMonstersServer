@@ -13,7 +13,7 @@ public class BattleBoard {
         playerA.setPlayer(new Player());
     }
 
-    public Space[][] getBattlefeald(){ return battleField; }
+    public Space[][] getBattlefield(){ return battleField; }
 
     public Space getPlayerA(){return playerA; }
 

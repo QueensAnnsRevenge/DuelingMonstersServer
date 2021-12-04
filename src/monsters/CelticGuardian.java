@@ -36,6 +36,11 @@ public class CelticGuardian extends Monster {
         }
     }
 
+    @Override
+    public void specialEffect() {
+
+    }
+
     public int getAttackPoints() {
         return attackPoints;
     }

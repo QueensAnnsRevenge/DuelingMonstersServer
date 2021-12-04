@@ -30,4 +30,6 @@ public abstract class Monster {
     public abstract void damage(int damage) throws MonsterDestroyed;
 
     public abstract void heal(int points);
+
+    public abstract void specialEffect();
 }
